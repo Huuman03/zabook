@@ -1,0 +1,208 @@
+.header{
+    background-color: rgb(190, 114, 0);
+    height: 100px;
+}
+.avat{
+    width: 90px; 
+    height: 90px; 
+    float: left;
+    border: 5px rgb(192, 192, 192) double;
+    
+}
+#menu{
+    
+    display: inline-block;
+    position: absolute;
+}
+#menu:hover{
+    margin-bottom: 200px;
+    background: rgb(184, 164, 75);
+    color: red;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding-bottom: 15px;
+}
+#menu:hover>#submenu{
+   display: inline-block;
+   position: static;
+   margin-top: 100px;
+   margin-left: -100px;
+   
+   
+}
+#submenu{
+display: none;
+}
+
+.profile{
+    
+    text-decoration: none;
+    
+}
+
+.prf{
+    border-radius: 20px;
+    width: 200px;
+    background-color: rgb(173, 109, 56);
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    margin-bottom: -30px;
+    font-size: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.prf:hover{
+    background-color: rgb(214, 146, 58);
+    color: aliceblue;
+}
+
+.timkiem{
+    
+    height: 30px;
+    width: 350px;
+    margin-top: 35px;
+    margin-left: 400px;
+    
+    
+}
+.icon{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 30px;
+    float: right;
+    padding: 5px;
+    background-color:aliceblue;
+}
+.icon:hover{
+    background-color: rgb(255, 230, 0);
+}
+
+.zab{
+    color: rgb(19, 0, 190);
+    font-size: 50px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+     'Lucida Sans', Arial, sans-serif;
+}
+.noi{
+    color: rgb(161, 1, 161);
+    font-size: 30px;
+}
+.user{
+    position: absolute;
+    margin-left: 110px;
+    margin-top: 30px;
+    color: rgb(255, 0, 0);
+    font-size: 25px;
+    font-weight: bold;
+    color: aliceblue;
+    padding: 10px;
+    border-radius: 10px;
+}
+.chao{
+    font-size: 30px;
+    margin-left: 30px;
+    background-color: rgb(255, 145, 0);
+    padding-left: 20px;
+    border-bottom-left-radius: 15px;
+}
+.baiviet{
+    border: 2px black solid;
+}
+.imgbv{
+    font-size: 20px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+}
+.inbv{
+    border: 2px black solid;
+    
+}
+.alltn{
+    border: 5px rgb(241, 8, 8) double;
+    border-radius: 40px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    
+    margin: 10px;
+    padding: 10px;
+    
+    background-color: rgb(250, 209, 155);
+}
+.alltn:hover{
+    border: 5px rgb(8, 253, 0) double;
+    border-radius: 40px;
+    color: brown;
+    
+    
+    background-color: rgb(255, 189, 103);
+}
+
+
+.xoa{
+    margin-right: 20px;
+    font-size: 20px;
+    text-decoration: none;
+    background-color: aliceblue;
+    border-radius: 50%;
+    padding: 10px;
+    font-weight: bold;
+    color: rgb(252, 0, 0);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    float: right;
+}
+.xoa:hover{
+    background-color: black;
+    color: white;
+}
+.cuonib{
+    width: 100%;
+    height: 800px;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+.phanxet{
+    background-color:rgb(250, 209, 155);
+    padding: 10px;
+    height: 800px;
+    
+}
+.ndbl{
+width: 85%;
+height: 30px;
+font-size: 25px;
+margin-top: 5px;
+
+}
+.addbl{
+    width: 10%;
+    height: 35px;
+    font-size: 15px;
+    float: right;
+    margin-top: 5px;
+    
+}
+.xuongcuoi{
+    margin-top: 700px;
+}
+.khung{
+    border-bottom: 1px black solid;
+}
+.cuonbl{
+    height: 700px;
+    margin-right: -200px;
+    
+    overflow-y:auto;
+}
+.ndbl2{
+    
+    float: right;
+    margin-left: 150px;
+    font-weight: bold; 
+    color: rgb(0, 68, 128);
+    width: 1000px;                
+}

@@ -1,0 +1,102 @@
+.header{
+    background-color: rgb(190, 114, 0);
+    height: 100px;
+}
+.avat{
+    width: 90px; 
+    height: 90px; 
+    float: left;
+    border: 5px rgb(192, 192, 192) double;
+    
+}
+.timkiem{
+    
+    height: 30px;
+    width: 350px;
+    margin-top: 35px;
+    margin-left: 280px;
+    
+    
+}
+.icon{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 30px;
+    float: right;
+
+    padding: 5px;
+    background-color:aliceblue;
+}
+.icon:hover{
+    background-color: rgb(255, 230, 0);
+}
+
+.zab{
+    color: rgb(19, 0, 190);
+    font-size: 50px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+     'Lucida Sans', Arial, sans-serif;
+}
+.noi{
+    color: rgb(161, 1, 161);
+    font-size: 30px;
+}
+.yc{
+    font-size: 50px;
+    margin-left: 400px;
+}
+.img{
+    size: 300px;
+    margin-left: 400px;
+    padding-top: 20px;
+}
+.gg{
+    padding-top: 150px;
+    
+    width: 100%;
+    height: 300px; 
+    border: 2px rebeccapurple solid;
+}
+.anh{
+    width: 400px;
+    height: 200px;
+    margin-left: 400px;
+    border: 2px black double;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.nut{
+    margin-top: 50px;
+    margin-right: 560px;
+    float: right;
+    text-align: center;
+    background-color: rgb(143, 143, 143);
+    width: 210px;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+.nut:hover{
+    background-color: aqua;
+    
+    
+    border-radius: 5px;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+}
+.buton{
+    font-size: 30px;
+    margin-left: 340px;
+    background-color: aquamarine;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    
+}
+.buton:hover{
+    
+    padding: 8px;
+    background-color: cornsilk;
+    border: 2px black solid;
+}

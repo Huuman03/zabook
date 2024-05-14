@@ -1,0 +1,93 @@
+.header{
+    background-color: rgb(190, 114, 0);
+    height: 100px;
+}
+.avat{
+    width: 100px; 
+    height: 100px; 
+    float: left;
+    
+    
+    
+}
+#menu{
+    
+    display: inline-block;
+    position: absolute;
+}
+#menu:hover{
+    background: rgb(168, 168, 168);
+    color: red;
+    border-bottom-right-radius: 10px;
+    padding-bottom: 15px;
+}
+#menu:hover>#submenu{
+   display: inline-block;
+   position: static;
+   margin-top: 100px;
+   margin-left: -100px;
+   
+   
+}
+#submenu{
+display: none;
+}
+.profile{
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 10px;
+    font-size: 30px;
+    margin-top: 100px;
+    border-radius: 10px;
+    padding: 5px;
+    
+}
+.profile:hover{
+    background-color: black;
+    color: aliceblue;
+}
+
+.timkiem{
+    
+    height: 30px;
+    width: 350px;
+    margin-top: 35px;
+    margin-left: 400px;
+    
+    
+}
+.icon{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 30px;
+    float: right;
+
+    padding: 5px;
+    background-color:aliceblue;
+}
+.icon:hover{
+    background-color: rgb(129, 129, 129);
+}
+
+.zab{
+    color: rgb(19, 0, 190);
+    font-size: 50px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+     'Lucida Sans', Arial, sans-serif;
+}
+.noi{
+    color: rgb(161, 1, 161);
+    font-size: 30px;
+}
+.user{
+    position: absolute;
+    margin-left: 200px;
+    margin-top: 10px;
+    margin-top: 20px;
+    color: rgb(243, 243, 243);
+    font-size: 25px;
+    font-weight: bold;
+}
