@@ -1,0 +1,8 @@
+	tao project
+git init
+git remote add .....
+git remote -v
+	update
+git add .
+git commit -m"zabook"
+git push origin master
