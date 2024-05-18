@@ -12,7 +12,7 @@
         public function insertda($user,$pass,$add,$avt,$gender,$hobby)
         {
             global $conn;
-            $sql="insert into taikhoan(taikhoan,matkhau,sdt,ngaysinh,gioitinh)
+            $sql="insert into taikhoan(taikhoan,matkhau,email,ngaysinh,gioitinh)
             values('$user','$pass','$add','$avt','$gender')";
             $run=mysqli_query($conn,$sql);
             return $run;
@@ -61,7 +61,7 @@
         {
             global $conn;
             $sql="update taikhoan set taikhoan='$avat',matkhau='$ava',
-            sdt='$av',ngaysinh='$a',gioitinh='$avat1',ten='$ten' where id='$id'";
+            email='$av',ngaysinh='$a',gioitinh='$avat1',ten='$ten' where id='$id'";
             $run=mysqli_query($conn,$sql);
             return $run;
             

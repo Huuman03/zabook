@@ -1,3 +1,14 @@
+<?php
+session_start();
+include ("PHPMailer/src/Exception.php");
+include ("PHPMailer/src/PHPMailer.php");
+include ("PHPMailer/src/SMTP.php");
+include ("PHPMailer/src/OAuth.php");
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -117,11 +128,11 @@
 
                     <tr>
                         <td>
-                        <span class="text" >Số điện thoại</span>
+                        <span class="text" >Email</span>
                             
                         </td>
                         <td>
-                            <input type="text" name="sdt" placeholder="Số điện thoại">
+                            <input type="email" name="email" placeholder="Email">
                         </td>
                     </tr>
 
@@ -208,7 +219,7 @@
         
         else{
            if(empty($_POST['name']) || empty($_POST['pass']) || empty($_POST['rpass']) || 
-        empty($_POST['sdt']) || empty($_POST['ngay']) || empty($_POST['gioitinh']) ||
+        empty($_POST['email']) || empty($_POST['ngay']) || empty($_POST['gioitinh']) ||
          empty($_POST['st']))
         {
             echo "<script> alert('Bạn chưa nhập đủ thông tin!'); </script>";
@@ -241,17 +252,45 @@
     }
     
     
-        
+    
         if(isset($_POST['dangky']))
         {
-            $in_da=$get_data->insertda($_POST['name'],$_POST['pass'],$_POST['sdt'],
-            $_POST['ngay'],$_POST['gioitinh'],$check);
-            if($in_da) {echo "<script> alert('Đăng ký thành công'); 
-                window.location='sigin.php?idtk=$idtk'</script>";
-                
-  
-            }
-            else echo "<script> alert ('Đăng ký không thành công'); </script>";
+
+            $maxn=random_int(1000,9999);
+                        $_SESSION['maxn']=$maxn;
+                          $mail=new PHPMailer(true);
+                            try{
+                                $mail->SMTPDebug=0;
+                                $mail->isSMTP();
+                                $mail->Host = 'smtp.gmail.com';
+                                $mail->SMTPAuth = true;
+                                $mail->Username='nguyenhuuman2003@gmail.com';
+                                $mail->Password = 'bejthtadrkizzsxn';
+                                $mail->SMTPSecure = 'tls';
+                                $mail->Port = 587;
+                                $mail->CharSet ='UTF-8';
+                                $mail->setFrom('nguyenhuuman2003@gmail.com'); 
+                                $mail->addAddress($_POST['email'],'Huu Man'); //email nguoi nhan
+                                $mail->isHTML(true);
+                                $mail->Subject='Mã xác nhận(Tuyệt đối không cung cấp mã này cho người khác)';    // Tieu de
+                                  // noi dung
+                                $mail->Body = $maxn;  // noi dung
+                                $mail->send();
+                                $mail->AltBody = 'cố gắng ngheng';
+                                //echo "<script> alert ('Email đã được gửi'); </script>";
+                                $_SESSION['name']=$_POST['name'];
+                                $_SESSION['pass']=$_POST['pass'];
+                                $_SESSION['email']=$_POST['email'];
+                                $_SESSION['ngay']=$_POST['ngay'];
+                                $_SESSION['gioitinh']=$_POST['gioitinh'];
+                                $_SESSION['check']=$check;
+                                echo "<script> window.location='xacnhan.php'</script>";
+                                }
+                            catch(Exception $e)
+                                {
+                                  echo "<script> alert ('Email gửi thất bại'); </script>";
+                                }
+            
         }
     ?>
 

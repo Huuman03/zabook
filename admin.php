@@ -55,7 +55,7 @@ $idtk=$_SESSION['idtk'];
                     <td><h4>Họ và tên</h4></td>
                     <td><h4>Tài khoản</h4></td>
                     <td><h4>Mật khẩu</h4></td>
-                    <td><h4>số ĐT</h4></td>
+                    <td><h4>Email</h4></td>
                     <td><h4>Ngày sinh</h4></td>
                     <td><h4>Giới tính</h4></td>
                     <td><h4>Avatar</h4></td>
@@ -81,7 +81,7 @@ $idtk=$_SESSION['idtk'];
                         else echo $i_dk['matkhau'] ?>
                     </td>
 
-                    <td><?php echo $i_dk['sdt'] ?></td>
+                    <td><?php echo $i_dk['email'] ?></td>
                     
                     <td><?php echo $i_dk['ngaysinh'] ?></td>
                     <td><?php echo $i_dk['gioitinh'] ?></td>

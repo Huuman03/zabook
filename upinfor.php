@@ -224,12 +224,12 @@ $idtk=$_SESSION['idtk'];
                     <tr></tr><tr></tr><tr></tr>
                     <tr>
                         <td>
-                        <span class="text" style="margin-left: 10px;">Số điện thoại</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="email" style="margin-left: 10px;">Email</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             
                         </td>
                         <td>
-                            <input type="text" name="sdt" placeholder="Số điện thoại"
-                            value="<?php echo $i_da['sdt']?>">
+                            <input type="text" name="email" placeholder="Email"
+                            value="<?php echo $i_da['email']?>">
                         </td>
                     </tr>
                     <tr></tr><tr></tr><tr></tr>
@@ -318,7 +318,7 @@ $idtk=$_SESSION['idtk'];
         
         else{
            if(empty($_POST['name']) || empty($_POST['pass']) || empty($_POST['rpass']) || 
-        empty($_POST['sdt']) || empty($_POST['ngay']) || empty($_POST['gioitinh']))
+        empty($_POST['email']) || empty($_POST['ngay']) || empty($_POST['gioitinh']))
         {
             echo "<script> alert('Bạn chưa nhập đủ thông tin!'); </script>";
             return 0;
@@ -355,7 +355,7 @@ $idtk=$_SESSION['idtk'];
         
         if(isset($_POST['update']))
         {
-            $in_da=$get_data->updateda($_POST['name'],$_POST['pass'],$_POST['sdt'],
+            $in_da=$get_data->updateda($_POST['name'],$_POST['pass'],$_POST['email'],
             $_POST['ngay'],$_POST['gioitinh'],$_POST['ten'],$idtk);
             if($in_da) {echo "<script> alert('Cập nhật thành công'); 
                 window.location='upinfor.php'</script>";
