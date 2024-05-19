@@ -31,17 +31,7 @@ include('control.php');
             
         </div>
 
-        <div class="gg" style="text-align: center;">
-        <span style="font-size: 40px; font-weight: bold;">Hãy diền mã xác nhận được gửi đến Gmail: </span>
-         <span style="font-size: 20px;"><?php $_SESSION['email'] ?></span>
-        <br>
-        <br>
-        <br>
-        <input type="number" name="maxn" placeholder="Mã xác nhận" style="width: 400px; height: 30px;
-        font-size: 20px;">
-        <br>
-        <input type="submit" name="xacnhan" value="Xác nhận" class="nut" >
-        </div>
+        
               <?php
               echo $_SESSION['maxn'];
               if(isset($_POST['xacnhan'])){

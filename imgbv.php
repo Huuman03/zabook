@@ -129,7 +129,7 @@ $data_idikbv=$get_data->id($i_bv['idtk']);
 foreach ($data_idikbv as $i_idtkbv)
 {
 
-
+    
 ?>
 <div>
                     <img src="upload/<?php echo $i_idtkbv['avatar'] ?>" alt="" class="avat" 
