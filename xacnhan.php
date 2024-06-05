@@ -11,9 +11,12 @@ include('control.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/datten.css">
-    <title>Document</title>
+    <title>Zabook</title>
 </head>
-<body >
+<body style="position: relative;">
+    <div style="position: absolute;
+    left: 50%;
+    transform: translate(-50%);">
 
 <form enctype="multipart/form-data" method="POST" >
     <div style="width: 1329px; height: 1000px;">
@@ -31,7 +34,17 @@ include('control.php');
             
         </div>
 
-        
+        <div class="gg" style="text-align: center;">
+        <span style="font-size: 30px; font-weight: bold;">Hãy nhập mã xác nhận được gửi đến Gmail: </span>
+         <span style="font-size: 30px; color: green;"><?php echo $_SESSION['email'] ?></span>
+        <br>
+        <br>
+        <br>
+        <input type="number" name="maxn" placeholder="Mã xác nhận" style="width: 400px; height: 30px;
+        font-size: 20px;">
+        <br>
+        <input type="submit" name="xacnhan" value="Xác nhận" class="nut" >
+        </div>
               <?php
               echo $_SESSION['maxn'];
               if(isset($_POST['xacnhan'])){
@@ -66,7 +79,7 @@ include('control.php');
     </div>
     </form>
     
-
+              </div>
    
     
 </body>

@@ -14,9 +14,12 @@ $imgbv=$_SESSION['imgbv'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/imgbv.css">
-    <title>Document</title>
+    <title>Zabook</title>
 </head>
-<body >
+<body style="position: relative;">
+    <div style="position: absolute;
+    left: 50%;
+    transform: translate(-50%);">
     <div>
 <?php
     include('control.php');
@@ -118,8 +121,7 @@ $imgbv=$_SESSION['imgbv'];
 
 
 </div>
-        
- <?php//----------------------------------------------------------------?>      
+       
 <?php
 
 $data_bv=$get_data->idbv($imgbv);
@@ -131,7 +133,7 @@ foreach ($data_idikbv as $i_idtkbv)
 
     
 ?>
-<div>
+                <div>
                     <img src="upload/<?php echo $i_idtkbv['avatar'] ?>" alt="" class="avat" 
                     style="border-radius: 50%;width: 50px; height: 50px;"> 
                      <br>
@@ -223,7 +225,6 @@ $idbvnew=$i_bv['idbv'];
     }
 ?>
 
-<?php//--------------------------------------------------------------?>
         <div class="header">
             <img src="./img/logo.jpg" alt="" class="avat">
 

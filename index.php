@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index.css">
-    <title>Document</title>
+    <title>Zabook</title>
 </head>
-<body >
+<body style="">
+    <div >
 
-<form enctype="multipart/form-data" method="POST" >
+<form enctype="multipart/form-data" method="POST" style="border: 2px black solid; width: 100%;"  >
     <div style="width: 1329px; height: 1000px;">
         <div class="header">
 
@@ -25,8 +26,9 @@
         </div>
 
         <div class="gg">
-       <a href="sigin.php" class="buton">Đăng nhập</a>
-       <a href="sigup.php" class="buton">Đăng ký</a>
+       <?php echo "<script>
+                        window.location='sigin.php'</script>";
+                        ?>
         </div>
 
         <div class="header">
@@ -47,7 +49,7 @@
     </div>
     </form>
 
-    
+    </div>
     
 </body>
 </html>

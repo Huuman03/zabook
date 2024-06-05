@@ -15,10 +15,12 @@ $idtk=$_SESSION['idtk'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/datten.css">
-    <title>Document</title>
+    <title>Zabook</title>
 </head>
-<body >
-
+<body style="position: relative;">
+    <div style="position: absolute;
+    left: 50%;
+    transform: translate(-50%);">
 <form enctype="multipart/form-data" method="POST" >
     <div style="width: 1329px; height: 1000px;">
         <div class="header">
@@ -93,6 +95,6 @@ $idtk=$_SESSION['idtk'];
     }
 
     ?>
-    
+    </div>
 </body>
 </html>

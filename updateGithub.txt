@@ -1,6 +1,6 @@
 	tao project
 git init
-git remote add .....
+git remote add origin .....
 git remote -v
 	update
 git add .

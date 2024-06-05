@@ -13,9 +13,12 @@ $idtk=$_SESSION['idtk'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/mess.css">
-    <title>Document</title>
+    <title>Zabook</title>
 </head>
-<body >
+<body style="position: relative;">
+    <div style="position: absolute;
+    left: 50%;
+    transform: translate(-50%);">
 <?php
     include('control.php');
     
@@ -174,5 +177,6 @@ $idtk=$_SESSION['idtk'];
 
     </div>
     </form>
+    </div>
 </body>
 </html>

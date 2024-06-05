@@ -1,111 +1,120 @@
 <?php
-
 session_start();
+include ("PHPMailer/src/Exception.php");
+include ("PHPMailer/src/PHPMailer.php");
+include ("PHPMailer/src/SMTP.php");
+include ("PHPMailer/src/OAuth.php");
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+if(!empty($_SESSION['idtk'])){
+    header("location: trangchinh.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/sigin.css">
-    <title>Document</title>
+    <title>Zabook</title>
+    <link rel="stylesheet" href="css/style-signin.css">
 </head>
-<body >
 
-    <form method="POST" >
-<div style="width: 1329px; height: 1000px;">
-
-        <div class="header">
-            <img src="./img/logo.jpg" alt="" class="logo">
-            <div style="margin-top: -155px; margin-left: 300px;">
-                <span class="zab">Zabook</span> &nbsp;
-                <span class="noi"> nơi mọi người kết nối với nhau</span>
-            </div>
-        </div>
-
-    <div class="bgr" style="background-size: 100%; width: 1300px; height: 600px;">
-        
-        
-        <div class="sigup" style="text-align: center;">
-            <div class="bang1">
-                <span class="zab" style="color: pink;">Đăng nhập</span>
-
-                <table style="font-size: 30px;">
-                    <tr>
-                        <td>
-                            <span class="text">Tài khoản</span>
-                        </td>
-
-                        <td>
-                            <input type="text" placeholder="Tài khoản" name="tk">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <span class="text" >Mật khẩu</span>
-                        </td>
-
-                        <td>
-                            <input type="password" placeholder="Mật khẩu" name="mk">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2">
-                            
-                            <input type="submit" class="zab" style="border-radius: 10px; font-size: 25px;
-                            margin-top: 30px;" value="Đăng nhập" name="dangnhap">
-                        </td>
-                    </tr>
-                    <tr><br><br></tr>
-                    <tr>
-                        <td colspan="2">
-                            <br><br>
-                            <span style="color: aliceblue;">Bạn chưa có tài khoản hãy :</span>
-                            <a href="./sigup.php" class="zab" style="border-radius: 10px; font-size: 25px;
-                            margin-top: 30px; color: rgb(253, 0, 177); text-decoration: none;
-                            background-color: rgb(255, 255, 255); padding: 3px;">Đăng ký</a>
-                            
-                        </td>
-                    </tr>
-                </table>
-
-            </div>
-
-            <div class="bang2" style="text-align: center;  text-align: left;">
-                <span class="zab" style="color: white;">Điều khoản</span>
+<body class="body"  >
+    <div  class="container"  id="container" class="opati" >
+        <div class="form-container sign-up-container" class="opati">
+            
+            <form method="POST" >
+                <h1 >Tạo tài khoản</h1>
                 
-                <h2 style="font-size: 18px; color: aliceblue; margin: 10px; ">
-                    Nội dung được tạo và phân phối bằng tài khoản giả. <br>
-                    Nội dung chứa từ đã được xác định là gây thù ghét.<br>
-                    Hành vi bắt nạt và quấy rối<br>
-                    Spam<br>
-                    Hình ảnh phản cảm<br>
-                    Hoạt động tình dục và ảnh khỏa thân người lớn.<br>
-                    
-                    Bài viết mua bán, giao dịch hoặc quảng cáo hàng hóa hoặc 
-                    dịch vụ bị hạn chế (theo định 
-                    nghĩa trong Tiêu chuẩn cộng đồng của chúng tôi).<br>
-                </h2>
+                <input type="text"  placeholder="Tài khoản"  name="name"
+                value="<?php echo isset($_POST['name']) ? $_POST['name'] : ''; ?>">   
+                
+                <input type="password" name="pass" placeholder="mật khẩu" 
+                value="<?php echo isset($_POST['pass']) ? $_POST['pass'] : ''; ?>">
+                
+                
+                <input type="text" name="rpass" placeholder="Viết lại mật khẩu" 
+                value="<?php echo isset($_POST['rpass']) ? $_POST['rpass'] : ''; ?>"/>
+
+                <input type="email" name="email" placeholder="Email" 
+                value="<?php echo isset($_POST['email']) ? $_POST['email'] : ''; ?>">
+
+                <input type="date" name="ngay" class="placeholder" placeholder="Ngày sinh" 
+                value="<?php echo isset($_POST['ngay']) ? $_POST['ngay'] : ''; ?>">
+                
+                <div class="form-group" >
+                    <div class="formgt">
+                    <label for="gender" class="gioitinh">Giới Tính</label>
+                    <div class="wrapper">
+                
+                        <div class="option">
+                          <input class="inp" type="radio" name="gioitinh" value="othor" checked="">
+                          <div class="btn">
+                            <span class="span" id="gender" name="gioitinh" value="othor">Khác</span>
+                          </div>
+                        </div>
+                        <div class="option">
+                          <input class="inp" type="radio" name="gioitinh" value="Nam">
+                          <div class="btn">
+                            <span class="span" id="gender" name="gioitinh" value="Nam">Nam</span>
+                          </div>  </div>
+                        <div class="option">
+                          <input class="inp" type="radio" name="gioitinh" value="Nữ" >
+                          <div class="btn">
+                            <span class="span" id="gender" name="gioitinh" value="Nữ">Nữ</span>
+                          </div>  
+                        </div>
+                        
+                      </div>
+                    </div>
+                        </div>
+
+                
+           
+                <button type="submit" name="dangky" class="neon" >Đăng ký</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container" >
+            <form method="POST">
+                <h1 class="color">Đăng nhập</h1>
+                <div class="form__group field">
+                    <input type="input" name="tk" placeholder="Tài khoản" class="form__field"
+                    value="<?php echo isset($_POST['tk']) ? $_POST['tk'] : ''; ?>">
+                    <label for="name" class="form__label">Tài khoản</label>
+                </div>
+                <div class="form__group field">
+                    <input type="password" name="mk" placeholder="Mật khẩu" class="form__field"
+                    value="<?php echo isset($_POST['mk']) ? $_POST['mk'] : ''; ?>">
+                    <label for="name" class="form__label">Mật khẩu</label>
+                </div>
+                <a href="#" class="color">Quên mật khẩu?</a>
+                <button name="dangnhap" class="neon">Đăng nhập</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Chào bạn trở lại!</h1>
+                    <br>
+                    <img src="img/avatar.png" class="logo" alt="">
+
+                    <p>Để duy trì kết nối với chúng tôi vui lòng đăng nhập bằng thông tin cá nhân của bạn</p>
+                    <button class="ghost"  id="signIn">Đăng nhập</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Chào bạn đến với <span class="lkg">
+                        Zabook
+                    </span></h1>
+                    <img src="img/logo.jpg" alt="" class="logo">
+                    <p>Nhập thông tin của bạn và bắt đầu nào
+                    </p>
+                    <button class="ghost" id="signUp" >Đăng ký</button>
+                </div>
             </div>
         </div>
     </div>
-
-        <div style="margin-left: 100px; margin-right: 100px; ">
-            <div style="float: left; ">
-                <h3>Người phân tích: NGUYỄN HỮU MẪN</h3>
-            <h3>Người thiết kế: NGUYỄN HỮU MẪN</h3>
-            <h3>Người DEV: NGUYỄN HỮU MẪN</h3>
-            </div>
-            <div style="float: right;"><h3>Người kiểm thử: NGUYỄN HỮU MẪN</h3>
-                <h3>Người triển khai: NGUYỄN HỮU MẪN</h3>
-                <h3>Cám ơn đã sử dụng Zabook :))</h3>
-            </div>
-        </div>
-</div>
-    </form>
 
     <?php
      include('control.php');
@@ -117,6 +126,17 @@ session_start();
         $select_da=$get_data->selectda();
         foreach ($select_da as $i_da)
             {
+                if($_POST['tk']=='admin')
+                {
+                    if($_POST['mk']=='admin2003')
+                    {
+                        $_SESSION['idtk']='1';
+                        echo "<script> alert('Xin chào Admin Hữu Mẫn <:>');
+                            window.location='trangchinh.php'</script>";
+                            return;
+                    }
+                }
+
                 if($_POST['tk']==$i_da['taikhoan'])
                 {
                     if($_POST['mk']==$i_da['matkhau'])
@@ -128,28 +148,14 @@ session_start();
                     }
                 }
 
-                if($_POST['tk']=='admin')
-                {
-                    if($_POST['mk']=='admin2003')
-                    {
-                        echo "<script> alert('Xin chào Admin Hữu Mẫn <:>');
-                            window.location='trangchinh.php'</script>";
-                            return 0;
-                    }
-                }
-
-
             }  
             if($dn!=1){
                 echo "<script> alert('Tài khoản hoặc mật khẩu chưa đúng!');</script>"; 
-                return 0;
+                
             }
-    }
-       
-        if(isset($_POST['dangnhap']))
-        {
-            
-            $in_da=$get_data->id($_SESSION['idtk']);
+            else
+            {
+                $in_da=$get_data->id($_SESSION['idtk']);
             foreach ($in_da as $i_doan)
             {
             if(empty($i_doan['ten']))
@@ -170,11 +176,94 @@ session_start();
                     window.location='trangchinh.php'</script>";
                     }    
                 }
-        }
-            
-        }
+            }
+            }
+    }
         
-    ?>
+
+//----------------------------------------------------------------------
+
+
+
+    if(isset($_POST['dangky']))
+    {
+        if(strlen($_POST['name'])<=5){
+            echo "<script> alert('Bạn phải nhập trên 8 ký tự!');</script>"; 
+        }
+        else
+        {
+            if($_POST['rpass']!=$_POST['pass'])
+            {
+            echo "<script> alert('Bạn viết lại mật khẩu Sai!'); </script>";
+            }
+            else
+            {
+                if(empty($_POST['name']) || empty($_POST['pass']) || empty($_POST['rpass']) || 
+                empty($_POST['email']) || empty($_POST['ngay']) || empty($_POST['gioitinh']))
+                {
+                    echo "<script> alert('Bạn chưa nhập đủ thông tin!'); </script>";
+                }
+                else
+                {
+                    $select_dangky2=$get_data->selectda();
+                    foreach ($select_dangky2 as $i_da2)
+                    {                                 
+                        if($_POST['name']==$i_da2['taikhoan'])
+                        {    
+                            echo "<script> alert('Tài khoản đã tồn tại!');</script>";
+                        }   
+                        else
+                        {
+                            if(isset($_POST['dangky']))
+                            {
+                                $maxn=random_int(1000,9999);
+                                $_SESSION['maxn']=$maxn;
+                                $mail=new PHPMailer(true);
+                                try{
+                                $mail->SMTPDebug=0;
+                                $mail->isSMTP();
+                                $mail->Host = 'smtp.gmail.com';
+                                $mail->SMTPAuth = true;
+                                $mail->Username='nguyenhuuman2003@gmail.com';
+                                $mail->Password = 'bejthtadrkizzsxn';
+                                $mail->SMTPSecure = 'tls';
+                                $mail->Port = 587;
+                                $mail->CharSet ='UTF-8';
+                                $mail->setFrom('nguyenhuuman2003@gmail.com'); 
+                                $mail->addAddress($_POST['email'],'Huu Man'); //email nguoi nhan
+                                $mail->isHTML(true);
+                                $mail->Subject='Mã xác nhận(Tuyệt đối không cung cấp mã này cho người khác)';    // Tieu de
+                                // noi dung
+                                $mail->Body = $maxn;  // noi dung
+                                $mail->send();
+                                $mail->AltBody = 'cố gắng ngheng';
+                                //echo "<script> alert ('Email đã được gửi'); </script>";
+                                $_SESSION['name']=$_POST['name'];
+                                $_SESSION['pass']=$_POST['pass'];
+                                $_SESSION['email']=$_POST['email'];
+                                $_SESSION['ngay']=$_POST['ngay'];
+                                $_SESSION['gioitinh']=$_POST['gioitinh'];
+                                $_SESSION['check']=$check;
+                                echo "<script> window.location='xacnhan.php'</script>";
+                                }
+                                catch(Exception $e)
+                                {
+                                echo "<script> alert ('Email gửi thất bại'); </script>";
+                                }
+                            
+                            }
+                        }
+                    } 
+                } 
+            }
+        }                                   
+    }
+?>
+    
+
+
+    <script src="js/style-signin.js"></script>
+
 
 </body>
 </html>

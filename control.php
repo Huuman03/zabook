@@ -149,8 +149,7 @@
         public function selectbl($idbv)
         {  
             global $conn;
-            $sql="select * from binhluan where idbv=$idbv";
-            $sql="select * from binhluan order by idbl asc";
+            $sql="select * from binhluan where idbv=$idbv order by idbl asc";
             $run=mysqli_query($conn,$sql);
             return $run;
             
