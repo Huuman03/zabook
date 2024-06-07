@@ -9,7 +9,7 @@
 
     $data_bl=$get_data->deletebl($_GET['delbv']);
     if($in_da) {echo "<script>
-        window.location='trangchinh.php'</script>";
+        window.location='index.php'</script>";
         
 
     }

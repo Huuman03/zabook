@@ -16,7 +16,7 @@ $idtk=$_SESSION['idtk'];
     if($idtk=='1') {
         $idtk=1;
         echo "<script> alert('Không thể xóa admin!');
-        window.location='trangchinh.php'</script>";
+        window.location='index.php'</script>";
         return 0;
     }
     $in_da=$get_data->deleteda($idtk);

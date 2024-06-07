@@ -9,7 +9,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 if(!empty($_SESSION['idtk'])){
-    header("location: trangchinh.php");
+    header("location: index.php");
 }
 ?>
 <!DOCTYPE html>
@@ -132,7 +132,7 @@ if(!empty($_SESSION['idtk'])){
                     {
                         $_SESSION['idtk']='1';
                         echo "<script> alert('Xin chào Admin Hữu Mẫn <:>');
-                            window.location='trangchinh.php'</script>";
+                            window.location='index.php'</script>";
                             return;
                     }
                 }
@@ -163,7 +163,7 @@ if(!empty($_SESSION['idtk'])){
                     
                     echo "<script> alert('Đăng nhập thành công');
                     
-                    window.location='datten.php'</script>";
+                    window.location='toname.php'</script>";
                 }
                 else 
                 {
@@ -173,7 +173,7 @@ if(!empty($_SESSION['idtk'])){
                     }
                     else {
                         echo "<script> alert('Đăng nhập thành công');
-                    window.location='trangchinh.php'</script>";
+                    window.location='index.php'</script>";
                     }    
                 }
             }
@@ -244,7 +244,7 @@ if(!empty($_SESSION['idtk'])){
                                 $_SESSION['ngay']=$_POST['ngay'];
                                 $_SESSION['gioitinh']=$_POST['gioitinh'];
                                 $_SESSION['check']=$check;
-                                echo "<script> window.location='xacnhan.php'</script>";
+                                echo "<script> window.location='confirmemail.php'</script>";
                                 }
                                 catch(Exception $e)
                                 {

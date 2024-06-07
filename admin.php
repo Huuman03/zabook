@@ -92,7 +92,7 @@ $idtk=$_SESSION['idtk'];
 
                     <td ><a href="trunggiantk.php?idtk=<?php echo $i_dk['id']?>"> Đăng nhập </a></td>
                     
-                    <td><a href="adxoa.php?idtk=<?php echo $i_dk['id']?>"
+                    <td><a href="addeletel.php?idtk=<?php echo $i_dk['id']?>"
                     onclick="if(confirm('Bạn có chắc muốn xóa'))return true;
                     else return false";> Xóa </td>
                 </tr> 

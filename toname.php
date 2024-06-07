@@ -84,7 +84,7 @@ $idtk=$_SESSION['idtk'];
             }
             else {
                 echo "<script> alert('Đặt tên thành công');
-                window.location='trangchinh.php'</script>";
+                window.location='index.php'</script>";
             }  
             }
         }

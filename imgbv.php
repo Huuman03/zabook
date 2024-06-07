@@ -58,7 +58,7 @@ $imgbv=$_SESSION['imgbv'];
             ><div class="prf">
             Thay ảnh đại diện
             </div></a><br><br>
-        <a href="xemavatar.php" class="profile"
+        <a href="checkavatar.php" class="profile"
             ><div class="prf">
             Xem ảnh đại diện
             </div></a><br><br>
@@ -69,7 +69,7 @@ $imgbv=$_SESSION['imgbv'];
         <?php if($idtk!='1')
         { ?>
         
-            <a href="xoatk.php"  
+            <a href="deleteuser.php"  
             onclick="if(confirm('Bạn có chắc muốn xóa tài khoản vĩnh viễn!')) return true;
             else return false"; class="profile"
             style="padding-right: 54px;">
@@ -115,7 +115,7 @@ $imgbv=$_SESSION['imgbv'];
 <a href="mess.php">
 <img src="./img/mess.png" alt="" class="icon"></a>
 
-<a href="trangchinh.php">
+<a href="index.php">
 <img src="./img/home.png" alt="" class="icon"></a>
 </div>
 

@@ -6,7 +6,7 @@ if(empty($_SESSION['idtk'])){
 }
 
 $_SESSION['idtk']=$_GET['idtk'];
-header("location: trangchinh.php");
+header("location: index.php");
 
 
 ?>

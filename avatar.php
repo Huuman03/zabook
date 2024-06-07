@@ -55,7 +55,7 @@ $idtk=$_SESSION['idtk'];
             ><div class="prf">
             Thay ảnh đại diện
             </div></a><br><br>
-        <a href="xemavatar.php" class="profile"
+        <a href="checkavatar.php" class="profile"
             ><div class="prf">
             Xem ảnh đại diện
             </div></a><br><br>
@@ -112,7 +112,7 @@ $idtk=$_SESSION['idtk'];
 <a href="mess.php">
 <img src="./img/mess.png" alt="" class="icon"></a>
 
-<a href="trangchinh.php">
+<a href="index.php">
 <img src="./img/home.png" alt="" class="icon"></a>
 </div>
 
